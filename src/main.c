@@ -20,11 +20,9 @@ int main(int argc, char **argv) {
 
     // check if conversion is successful, if not it errors
     if (*endptr != '\0' || endptr == argv[1] || number < 0 || number > INT_MAX) {
-        printf("ERROR: please input a valid number (cannot be negative)\n");
+        printf("ERROR: please input a valid number\n");
         return 1;
     }
 
     return 0;
 }
-
-
