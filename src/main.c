@@ -23,6 +23,10 @@ int main(int argc, char **argv) {
         printf("ERROR: please input a valid number\n");
         return 1;
     }
-
+    
+    // we call the function to print the binary result
+    decimal_to_binary((int)number);
+    putchar('\n'); // newline so it doesn't get fucked
+    
     return 0;
 }
