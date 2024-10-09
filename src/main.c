@@ -29,6 +29,7 @@ int main(int argc, char **argv) {
 
     char *endptr; // ptr for error handling
     long number = strtol(argv[1], &endptr, 10); // convert string to long int
+    int option = 0; 
 
 
     // verify if valid input is passed
@@ -49,9 +50,9 @@ int main(int argc, char **argv) {
         exit(EXIT_FAILURE);
     }
     
-      int option = 0; // Valor por defecto si no se proporciona opción
+    // default value if no option is
     if (argc == 3) {
-        option = atoi(argv[2]); // Convertir solo si argv[2] existe
+        option = atoi(argv[2]); 
     }
     
     // call to the function to print the binary result
