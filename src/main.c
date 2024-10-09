@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <limits.h>
+#include <string.h>
 
 void decimal_to_binary(int n) {
     if (n > 1) {
@@ -15,16 +16,22 @@ int main(int argc, char **argv) {
         return 1;
     }
 
-    char *endptr; // pointer for error handling
+    char *endptr; // ptr for error handling
     long number = strtol(argv[1], &endptr, 10); // convert string to long int
 
-    // check if conversion is successful, if not it errors
-    if (*endptr != '\0' || endptr == argv[1] || number < 0 || number > INT_MAX) {
-        printf("ERROR: please input a valid number\n");
+    // verify if valid input is passed
+    if (endptr == argv[1]) {
+        printf("ERROR: Please input a valid number\n");
+        return 1;
+    }
+
+    // number limit error handling, make sure usr inputs valid length
+    if (strlen(argv[1]) > 11) {
+        printf("ERROR: Number exceeds the maximum length allowed (must be between 0 and %d)\n", INT_MAX);
         return 1;
     }
     
-    // we call the function to print the binary result
+    // call to the function to print the binary result
     decimal_to_binary((int)number);
     putchar('\n'); // newline so it doesn't get fucked
     
