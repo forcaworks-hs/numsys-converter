@@ -31,6 +31,7 @@ int main(int argc, char **argv) {
         exit(EXIT_SUCCESS);
     }
 
+    // deny non-numeric characters input to usr
     if (*endptr != '\0') {
         printf("ERROR: invalid input, non-numeric characters detected\n");
         exit(EXIT_FAILURE);
