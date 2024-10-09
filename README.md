@@ -1,6 +1,6 @@
 # numsys-cv
 ## Usage
-``./numsyscv <number> <option>``
+``./numsyscv <number> <option>`` **(if no option is given, the number you pass will be automatically converted to binary)**
 ## How to build
 Set your CC environment variable to your desired compiler<br>
 If CC is not set GCC will be used<br>
